@@ -1,0 +1,28 @@
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+
+  button{
+    padding: 0.5rem 0.75rem;
+    min-width: 2.5rem;
+  }
+
+  ul {
+    list-style-type: none;
+    list-style-position: inside;
+  }
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    cursor: pointer;
+    font-weight: 600;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: #f9fafb;
+    display: grid;
+    place-items: center;
+  }
+}

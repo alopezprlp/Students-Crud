@@ -1,0 +1,79 @@
+// _buttons.scss
+
+$colors: (
+  marine-blue: #03a9f4,
+  destructive: #d9534f,
+  green: #5cb85c,
+  disabled-bg: #efeff0,
+  disabled-text: #afb1b6,
+);
+
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    background: darken($bg, 8%);
+    opacity: 0.85;
+  }
+  &:active {
+    background: darken($bg, 25%);
+    opacity: 0.95;
+  }
+
+  &:disabled {
+    background-color: darken($bg, 5%);
+    color: map-get($colors, disabled-text);
+    opacity: 0.6;
+  }
+}
+
+.btn {
+  @include button-bg(map-get($colors, marine-blue));
+  transition: all 0.3s ease;
+  color: white;
+  text-decoration: none;
+  padding: 0.625rem 1.75rem;
+  background-color: map-get($colors, marine-blue);
+  border-radius: 0.2rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.btn-green {
+  @include button-bg(map-get($colors, green));
+}
+
+.btn-red {
+  @include button-bg(map-get($colors, destructive));
+}
+
+.btn-ghost {
+  background: none;
+  color: map-get($colors, disabled-text);
+  &:hover {
+    color: white;
+    opacity: 0.85;
+    background: none;
+  }
+  &:active {
+    opacity: 0.95;
+  }
+
+  &:disabled {
+    background: none;
+    color: map-get($colors, disabled-text);
+    opacity: 0.5;
+  }
+}
+.btn-icon {
+  padding: 0.2rem 0.5rem;
+&:hover{
+  transform: scale(1.1);
+
+}
+}

@@ -1,0 +1,21 @@
+@mixin font-size-rem($size) {
+  font-size: $size / 16 * 1rem;
+}
+
+@mixin responsive {
+  @media (max-width: 768px) {
+    .tableHead,
+    .tableCell {
+      font-size: 0.8rem;
+      padding: 4px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .tableHead,
+    .tableCell {
+      font-size: 0.7rem;
+      padding: 2px;
+    }
+  }
+}
